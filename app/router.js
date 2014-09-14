@@ -1,13 +1,14 @@
-import Ember from 'ember';
+import Ember from 'ember'
 
 var Router = Ember.Router.extend({
   location: TodoENV.locationType
-});
+})
 
 Router.map(function() {
-  this.route('todos');
-  this.route('todos/active');
-  this.route('todos/completed');
-});
+  this.resource('todos', {path: '/'}, function() {
+		this.route('active')
+		this.route('completed')
+  })
+})
 
-export default Router;
+export default Router
