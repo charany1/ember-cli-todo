@@ -1,5 +1,6 @@
 import Ember from 'ember'
 
+
 export default Ember.ObjectController.extend({
 	isCompleted: function(key, val) {
 		var model = this.get('model')
